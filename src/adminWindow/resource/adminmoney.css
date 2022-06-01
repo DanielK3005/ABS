@@ -1,0 +1,28 @@
+.admin-pane{
+    -fx-background-image: url("/mainWindow/resource/digital-money-background.jpg");
+}
+
+.table-column{
+    -fx-alignment:center;
+}
+.button{
+    -fx-background-color: #fa7212;
+    -fx-text-fill: white;
+    -fx-border-radius: 6;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+}
+.tab-pane:top .tab-header-area .headers-region .tab:top {
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+}
+
+.tab-pane:top .tab-header-area .headers-region .tab:top .tab-container .tab-label{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.tab-pane:top .tab-header-area .headers-region .tab:selected:top{
+    -fx-background-color: #fa7212;
+}

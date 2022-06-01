@@ -1,0 +1,22 @@
+.button{
+    -fx-background-color: deepskyblue;
+    -fx-text-fill:#FFFFFF;
+    -fx-background-radious:6;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.table-column{
+    -fx-alignment:center;
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: deepskyblue;
+}
+
+.tab-pane:top .tab-header-area .headers-region .tab:top {
+    -fx-background-color: #FFFFFF;
+    -fx-font-weight: bold;
+}
+.tab-pane:top .tab-header-area .headers-region .tab:selected:top{
+    -fx-background-color: #39f158;
+}

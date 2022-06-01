@@ -1,0 +1,11 @@
+.header{
+    -fx-background-color: linear-gradient(to bottom, deepskyblue, white);
+}
+
+.toggle-switch .label .text{
+    -fx-font-weight: bold;
+}
+
+.combo-box{
+    -fx-background-color: white;
+}
