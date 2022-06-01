@@ -1,0 +1,15 @@
+.payment-pane{
+    -fx-background-image: url("/mainWindow/resource/digital-money-background.jpg");
+}
+
+.button{
+    -fx-background-color: #fa7212;
+    -fx-text-fill:#FFFFFF;
+    -fx-background-radious:6;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.table-column{
+    -fx-alignment:center;
+}

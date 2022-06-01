@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DTO:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DTO_jar</output-path>
+    <root id="archive" name="DTO.jar">
+      <element id="module-output" name="DTO" />
+      <element id="module-output" name="EngineSystem" />
+      <element id="module-output" name="JavaFX" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/jar_files (1)/controlsfx-8.40.11.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

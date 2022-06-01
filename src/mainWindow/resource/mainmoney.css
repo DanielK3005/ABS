@@ -1,0 +1,12 @@
+.root-pane{
+    -fx-background-image: url("digital-money-background.jpg");
+}
+
+.header .label{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.combo-box{
+    -fx-background-color: white;
+}
