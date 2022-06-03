@@ -2,6 +2,10 @@
     -fx-background-image: url("/mainWindow/resource/digital-money-background.jpg");
 }
 
+.title-label{
+    -fx-text-fill: black;
+    -fx-background-color: white;
+}
 .button{
     -fx-background-color: #fa7212;
     -fx-text-fill:#FFFFFF;

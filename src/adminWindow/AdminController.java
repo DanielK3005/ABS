@@ -107,6 +107,12 @@ public class AdminController {
     @FXML
     private TableColumn<PersonDTO, Integer> FinishedTotalLenders;
 
+    @FXML
+    private Label LoansLabel;
+
+    @FXML
+    private Label LendersLabel;
+
     private EngineFunctions Model;
     private DataBase dataDTO;
     private Yaz time;
@@ -118,6 +124,8 @@ public class AdminController {
         YazBtn.setVisible(false);
         LoanTabs.setVisible(false);
         CustomerTable.setVisible(false);
+        LoansLabel.setVisible(false);
+        LendersLabel.setVisible(false);
     }
     @FXML
     void IncreazeYaz(ActionEvent event) {
@@ -216,6 +224,8 @@ public class AdminController {
         YazBtn.setVisible(true);
         LoanTabs.setVisible(true);
         CustomerTable.setVisible(true);
+        LoansLabel.setVisible(true);
+        LendersLabel.setVisible(true);
         setTabs();
         SetCustomerTable();
         FileLoaded.show();

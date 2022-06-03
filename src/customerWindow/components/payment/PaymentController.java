@@ -76,8 +76,11 @@ public class PaymentController {
                 .filter(x->x.getOwner().getName().equalsIgnoreCase(SelectedPerson.getName()))
                 .filter(x->x.getStatus()== Loan.Status.ACTIVE|| x.getStatus()== Loan.Status.RISK)
                 .collect(Collectors.toList());
+        List<LoanDTO> CopyCustomerList=new ArrayList<>();
+        for(LoanDTO val: CustomerList)
+            CopyCustomerList.add(val.copyLoan());
         instractionLabel.setVisible(true);
-        CustomerTable=mainController.StatusTab("ACTIVE",CustomerList,RootPane);
+        CustomerTable=mainController.StatusTab("ACTIVE",CopyCustomerList,RootPane);
         TablePrefSettings(CustomerTable);
     }
 
@@ -101,7 +104,7 @@ public class PaymentController {
     void OnePaymentListner(ActionEvent event) throws IOException {
         LoanDTO selected = CustomerTable.getSelectionModel().getSelectedItem();
         if (selected == null) {
-            Notifications select = Notifications.create().title("Error").text("Please select loan from the table above that you wish to pay for").hideAfter(Duration.seconds(10)).position(Pos.TOP_LEFT);
+            Notifications select = Notifications.create().title("Error").text("Please select loan from the table above that you wish to pay for").hideAfter(Duration.seconds(60)).position(Pos.TOP_LEFT);
             select.showError();
             return;
         }
@@ -120,7 +123,7 @@ public class PaymentController {
                 try {
                     this.Model.PaymentForRisk(selected, amount, time.getValue());
                 } catch (ExtraPaymentMoneyException e) {
-                    Notifications getBack = Notifications.create().title("Information").text(e.getMessage()).hideAfter(Duration.seconds(10)).position(Pos.TOP_LEFT);
+                    Notifications getBack = Notifications.create().title("Information").text(e.getMessage()).hideAfter(Duration.seconds(60)).position(Pos.TOP_LEFT);
                     getBack.showInformation();
                 }
                 dataDTO = this.Model.getDataBaseDTO();
@@ -143,7 +146,7 @@ public class PaymentController {
     void PayAllListner(ActionEvent event) throws IOException {
         LoanDTO payAll=CustomerTable.getSelectionModel().getSelectedItem();
         if (payAll == null) {
-            Notifications select = Notifications.create().title("Error").text("Please select loan from the table above that you wish to pay for").hideAfter(Duration.seconds(10)).position(Pos.TOP_LEFT);
+            Notifications select = Notifications.create().title("Error").text("Please select loan from the table above that you wish to pay for").hideAfter(Duration.seconds(60)).position(Pos.TOP_LEFT);
             select.showError();
             return;
         }

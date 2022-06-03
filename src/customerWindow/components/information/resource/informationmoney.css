@@ -6,6 +6,11 @@
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 
+.title-label{
+    -fx-text-fill: black;
+    -fx-background-color: white;
+}
+
 .table-column{
     -fx-alignment:center;
 }

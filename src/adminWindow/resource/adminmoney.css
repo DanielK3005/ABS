@@ -2,6 +2,11 @@
     -fx-background-image: url("/mainWindow/resource/digital-money-background.jpg");
 }
 
+.title-label{
+    -fx-text-fill: black;
+    -fx-background-color: white;
+}
+
 .table-column{
     -fx-alignment:center;
 }

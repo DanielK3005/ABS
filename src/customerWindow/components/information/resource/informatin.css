@@ -1,3 +1,7 @@
+.root-pane{
+    -fx-background-color: linear-gradient(to right, deepskyblue 5%, white 50%);
+}
+
 .button{
     -fx-background-color: deepskyblue;
     -fx-text-fill:#FFFFFF;

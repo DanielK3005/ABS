@@ -54,9 +54,6 @@ public class ABSController {
     @FXML
     private ComboBox<String> StyleCB;
 
-    @FXML
-    private ToggleSwitch AnimationToggle;
-
     private String style;
     private EngineFunctions Model;
     private DataBase dataDTO;
@@ -294,6 +291,7 @@ public class ABSController {
             ActiveTable.getColumns().addAll(name,amount,payment,totalPayBack,leftToPay,totalInterestPaySoFar,totalInterest);
         TableView<PaymentDTO> paynemtTable=new TableView<>();
         paynemtTable.setPrefSize(800,300);
+        paynemtTable.setVisible(false);
         for(LenderDTO val: loaners){
             val.getShowPayment().setOnAction(e-> {PaymentActionHandle(val.getPaymentlog(),paynemtTable);} );
         }
@@ -344,12 +342,13 @@ public class ABSController {
             }
         };
     });
-    if(paynemtTable.getColumns().size()>0 && paynemtTable.getItems().size()>0){
+    if(paynemtTable.getColumns().size()>0 || paynemtTable.getItems().size()>0){
         paynemtTable.getColumns().clear();
         paynemtTable.getItems().clear();
     }
     paynemtTable.getColumns().addAll(payYaz,onePayment,interest,total,gotPaid);
     paynemtTable.setItems(FXCollections.observableArrayList(payments));
+    paynemtTable.setVisible(true);
     }
 
     public void DoubleNiceFormat(TableColumn priceCol){

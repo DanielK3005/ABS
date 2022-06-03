@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customerWindow.components.payment.PaymentController">
    <children>
       <AnchorPane fx:id="RootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="1196.0" styleClass="payment-pane" stylesheets="@payment.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -24,6 +23,11 @@
             <Label fx:id="instractionLabel" layoutX="14.0" layoutY="14.0" prefHeight="21.0" prefWidth="172.0" text="Please Select one Loan" textFill="#eb1530">
                <font>
                   <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="400.0" layoutY="2.0" prefHeight="21.0" prefWidth="172.0" text="Loans Table" textFill="#141414" underline="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Label>
          </children>
