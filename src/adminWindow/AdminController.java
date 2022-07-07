@@ -213,6 +213,7 @@ public class AdminController {
         MainController.setModel(this.Model);
         MainController.setText(absolutePath);
         MainController.getViewCB().setDisable(false);
+        time.setValue(1);
         dataDTO=this.Model.getDataBaseDTO();
         MainController.setDataDTO(dataDTO);
         Integer size=MainController.getViewCB().getItems().size();

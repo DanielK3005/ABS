@@ -18,7 +18,7 @@
                   <TableColumn fx:id="TotalPayColumn" prefWidth="78.0" text="Total&#10;Payment" />
               </columns>
             </TableView>
-            <Button fx:id="OnePaymentBtn" layoutX="88.0" layoutY="503.0" mnemonicParsing="false" onAction="#OnePaymentListner" prefHeight="57.0" prefWidth="172.0" text="Pay This&#10;Loans" />
+            <Button fx:id="OnePaymentBtn" layoutX="88.0" layoutY="503.0" mnemonicParsing="false" onAction="#OnePaymentListner" prefHeight="57.0" prefWidth="172.0" text="Pay This&#10;Loan" />
             <Button fx:id="PayAllBtn" layoutX="716.0" layoutY="503.0" mnemonicParsing="false" onAction="#PayAllListner" prefHeight="57.0" prefWidth="172.0" text="Pay All The&#10;Payments" />
             <Label fx:id="instractionLabel" layoutX="14.0" layoutY="14.0" prefHeight="21.0" prefWidth="172.0" text="Please Select one Loan" textFill="#eb1530">
                <font>

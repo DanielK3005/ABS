@@ -7,10 +7,10 @@
 
 <ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="message.MessageController">
    <content>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="600.0">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="750.0">
          <children>
             <ImageView fx:id="MessageImage" fitHeight="50.0" fitWidth="50.0" layoutX="7.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="MessageLabel" layoutX="71.0" layoutY="16.0" prefHeight="101.0" prefWidth="510.0" />
+            <Label fx:id="MessageLabel" layoutX="71.0" layoutY="16.0" prefHeight="110.0" prefWidth="650.0" />
          </children>
       </AnchorPane>
    </content>

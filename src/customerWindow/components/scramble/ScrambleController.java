@@ -1,17 +1,14 @@
 package customerWindow.components.scramble;
 
-import adminWindow.AdminController;
 import customerWindow.CustomerController;
-import customerWindow.components.information.InformationController;
 import database.DataBase;
 import dto.LoanDTO;
 import dto.PersonDTO;
 import engine.EngineFunctions;
 import exception.LastLoanException;
+import exception.NotEnoughMoneyException;
 import exception.MoreThanYouGotException;
 import javafx.beans.binding.Bindings;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -21,8 +18,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import mainWindow.ABSController;
 import org.controlsfx.control.CheckListView;
@@ -145,13 +140,13 @@ public class ScrambleController {
     void ScrambleListner(ActionEvent event) throws IOException {
         List<LoanDTO> checked=LoansResultPick.getItems().stream().filter(x->x.getPicked().isSelected()==true).collect(Collectors.toList());
         if(checked.size()==0){
-            Notifications more=Notifications.create().title("Error").text("Please select loans to successfully finish the scramble").hideAfter(Duration.seconds(60)).position(Pos.TOP_LEFT);
+            Notifications more=Notifications.create().title("Error").text("Please select loans to successfully finish the scramble").hideAfter(Duration.seconds(40)).position(Pos.TOP_LEFT);
             more.showError();
             return;
         }
         if(amountToInvest>PickedPerson.getBalance()){
             MoreThanYouGotException e=new MoreThanYouGotException(PickedPerson.getBalance(),amountToInvest);
-            Notifications more=Notifications.create().title("Error").text(e.getMessage()).hideAfter(Duration.seconds(60)).position(Pos.TOP_LEFT);
+            Notifications more=Notifications.create().title("Error").text(e.getMessage()).hideAfter(Duration.seconds(40)).position(Pos.TOP_LEFT);
             more.showError();
             return;
         }
@@ -161,7 +156,7 @@ public class ScrambleController {
             else
                 this.Model.MakeAssignment(PickedPerson, amountToInvest, checked, 100, time.getValue());
         }catch (LastLoanException e){
-            Notifications more=Notifications.create().title("Notice:").text(e.getMessage()).hideAfter(Duration.seconds(60)).position(Pos.TOP_LEFT);
+            Notifications more=Notifications.create().title("Notice:").text(e.getMessage()).hideAfter(Duration.seconds(40)).position(Pos.TOP_LEFT);
             more.showInformation();
         }
         dataDTO=this.Model.getDataBaseDTO();
@@ -181,7 +176,7 @@ public class ScrambleController {
                 return;
             if(amountToInvest>PickedPerson.getBalance()){
                 MoreThanYouGotException e=new MoreThanYouGotException(PickedPerson.getBalance(),amountToInvest);
-                Notifications more=Notifications.create().title("Error").text(e.getMessage()).hideAfter(Duration.seconds(60)).position(Pos.TOP_LEFT);
+                Notifications more=Notifications.create().title("Error").text(e.getMessage()).hideAfter(Duration.seconds(40)).position(Pos.TOP_LEFT);
                 more.showError();
                 return;
             }

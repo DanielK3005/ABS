@@ -95,6 +95,21 @@ public class ABSController {
         }
     }
 
+//    public void setLogin(String style) throws IOException {
+//        FXMLLoader fxmlLoader = new FXMLLoader();
+//        URL url;
+//        //if(!style.equals("BASIC"))
+//           // url = getClass().getResource("/adminWindow/resource/admin"+style.toLowerCase()+"-fxml.fxml");
+//        //else
+//        url = getClass().getResource("/loginWindow/login-fxml.fxml");
+//        fxmlLoader.setLocation(url);
+//        DynamicPane =fxmlLoader.load(url.openStream());
+//        loginController =fxmlLoader.getController();
+//        loginController.setMainController(this);
+//        BalanceLable.setVisible(false);
+//        Root.setCenter(DynamicPane);
+//    }
+
     public void setAdmin(String style) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         URL url;
@@ -385,7 +400,7 @@ public class ABSController {
                 break;
         }
 
-        Scene scene=new Scene(MessagePane,600,150);
+        Scene scene=new Scene(MessagePane,750,170);
         stage.setScene(scene);
         return stage;
     }
@@ -396,7 +411,7 @@ public class ABSController {
 
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        adminController.setPrimaryStage(primaryStage);
+        //adminController.setPrimaryStage(primaryStage);
     }
 
     public void setText(String path){

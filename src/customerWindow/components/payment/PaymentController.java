@@ -11,7 +11,6 @@ import engine.EngineFunctions;
 import exception.ExtraPaymentMoneyException;
 import exception.NotEnoughMoneyException;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
@@ -104,7 +103,7 @@ public class PaymentController {
     void OnePaymentListner(ActionEvent event) throws IOException {
         LoanDTO selected = CustomerTable.getSelectionModel().getSelectedItem();
         if (selected == null) {
-            Notifications select = Notifications.create().title("Error").text("Please select loan from the table above that you wish to pay for").hideAfter(Duration.seconds(60)).position(Pos.TOP_LEFT);
+            Notifications select = Notifications.create().title("Error").text("Please select loan from the table above that you wish to pay for").hideAfter(Duration.seconds(40)).position(Pos.TOP_LEFT);
             select.showError();
             return;
         }
@@ -123,7 +122,7 @@ public class PaymentController {
                 try {
                     this.Model.PaymentForRisk(selected, amount, time.getValue());
                 } catch (ExtraPaymentMoneyException e) {
-                    Notifications getBack = Notifications.create().title("Information").text(e.getMessage()).hideAfter(Duration.seconds(60)).position(Pos.TOP_LEFT);
+                    Notifications getBack = Notifications.create().title("Information").text(e.getMessage()).hideAfter(Duration.seconds(40)).position(Pos.TOP_LEFT);
                     getBack.showInformation();
                 }
                 dataDTO = this.Model.getDataBaseDTO();
@@ -135,9 +134,7 @@ public class PaymentController {
                 dataDTO = this.Model.getDataBaseDTO();
                 customerController.UpdateChanges(this.Model, this.dataDTO, CustomerController.ActionType.PAYMENT);
             } catch (NotEnoughMoneyException e) {
-                Stage stage = mainController.MessageStage(AdminController.MessageType.Error, e.getMessage());
-                stage.initModality(Modality.APPLICATION_MODAL);
-                stage.show();
+                e.printStackTrace();
             }
         }
     }
@@ -146,7 +143,7 @@ public class PaymentController {
     void PayAllListner(ActionEvent event) throws IOException {
         LoanDTO payAll=CustomerTable.getSelectionModel().getSelectedItem();
         if (payAll == null) {
-            Notifications select = Notifications.create().title("Error").text("Please select loan from the table above that you wish to pay for").hideAfter(Duration.seconds(60)).position(Pos.TOP_LEFT);
+            Notifications select = Notifications.create().title("Error").text("Please select loan from the table above that you wish to pay for").hideAfter(Duration.seconds(40)).position(Pos.TOP_LEFT);
             select.showError();
             return;
         }

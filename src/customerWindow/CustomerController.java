@@ -118,7 +118,7 @@ public class CustomerController {
         int selectind=mainController.getViewCB().getSelectionModel().getSelectedIndex();
         mainController.getViewCB().getItems().setAll(updatePersonList);
         mainController.getViewCB().getSelectionModel().select(selectind);
-        Stage stage=mainController.MessageStage(AdminController.MessageType.Successfully,"The " + type.toString().toLowerCase(Locale.ROOT)+ " process finished successfully!");
+        Stage stage=mainController.MessageStage(AdminController.MessageType.Successfully,"The " + type.toString().toLowerCase()+ " process finished successfully!");
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
     }
@@ -138,7 +138,7 @@ public class CustomerController {
         else if(type== ActionType.WITHDRAW)
             dialog.setTitle("Withdraw Money From The Account");
         else
-            dialog.setTitle(name+ "Risk Loan");
+            dialog.setTitle(name+ " Risk Loan");
         return dialog.showAndWait();
     }
 
